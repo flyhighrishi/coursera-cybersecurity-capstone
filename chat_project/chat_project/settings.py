@@ -1,3 +1,5 @@
+import dj_database_url
+import django_heroku
 """
 Django settings for chat_project project.
 
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-an)%)^sp3w($kwvhjg%p23c8_p*7#2-+jzil6=4w8y-y61ku!9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1', '81.2.240.201']
 
@@ -153,6 +155,7 @@ AUTHENTICATION_BACKENDS = [
     'account.authentication.EmailAuthBackend',
 ]
 
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
